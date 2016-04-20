@@ -1,0 +1,63 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Radar Chart</title>
+		<script src="../Chart.js"></script>
+		 <style>
+        .chart-legend li span{
+            display: inline-block;
+            width: 12px;
+            height: 12px;
+            margin-right: 5px;
+        }
+    </style>
+		<meta name = "viewport" content = "initial-scale = 1, user-scalable = no">
+		<style>
+			canvas{
+			}
+		</style>
+	</head>
+	<body>
+		<div style="width:30%">
+			<canvas id="canvas" height="200" width="200"></canvas>
+		</div>
+		<div id="Legend"></div>
+
+
+	<script>
+	var radarChartData = {
+		labels: ["Help_Intent", "Yes_Intent", "Ready", "No_Intent", "Give_UP", "Preferencies", "Reapeat"],
+		datasets: [
+			{
+				label: "My Second dataset",
+				fillColor: "RGBA(239, 188, 18, 0.8)",
+				strokeColor: "rgba(151,187,205,0)",
+				pointColor: "rgba(151,187,205,0)",
+				pointStrokeColor: "rgba(151,187,205,0)",
+				pointHighlightFill: "rgba(151,187,205,1)",
+				pointHighlightStroke: "rgba(151,187,205,1)",
+				data: [65,59,90,81,56,55,40]
+			}
+		]
+	};
+	
+	var option_radar = {
+			responsive: true,
+			angleLineColor : "rgba(200,187,205,0.8)", 
+			datasetStroke : true,
+			pointLabelFontFamily : "'Helvetica'",
+			pointLabelFontSize : 23,
+			pointLabelFontColor : "#666"
+
+		}
+
+	window.onload = function(){
+		window.myRadar = new Chart(document.getElementById("canvas").getContext("2d")).Radar(radarChartData, option_radar);
+		
+		
+     document.getElementById('Legend').innerHTML = window.myRadar.generateLegend();
+	}
+
+	</script>
+	</body>
+</html>

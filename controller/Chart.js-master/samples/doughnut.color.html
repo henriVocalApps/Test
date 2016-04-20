@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Doughnut Chart</title>
+		<script src="../src/Chart.Core.js"></script>
+		<script src="../src/Chart.Doughnut.js"></script>
+		<style>
+			body{
+				padding: 0;
+				margin: 0;
+			}
+			#canvas-holder{
+				width:30%;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="canvas-holder">
+			<canvas id="chart-area" width="500" height="500" style="-ms-transform: rotate(-120deg); -webkit-transform: rotate(-120deg); transform: rotate(-120deg);"/>
+		</div>
+
+
+	<script>
+
+		var doughnutData = [
+				{
+					value: 30,
+					label: "One",
+					color: "RGBA(51, 196, 226, 1.00)"
+				},
+				{
+					value: 80,
+					label: "Two",
+					color: "RGBA(183, 250, 247, 1.00)"
+				},
+				{
+					value: 60,
+					label: "Three",
+					color: "white"
+				}
+
+			];
+
+        var option = {
+             percentageInnerCutout : 70,
+             responsive : true
+        }
+			window.onload = function(){
+				var ctx = document.getElementById("chart-area").getContext("2d");
+				window.myDoughnut = new Chart(ctx).Doughnut(doughnutData, option);
+			};
+
+
+
+	</script>
+	</body>
+</html>

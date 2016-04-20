@@ -1,0 +1,438 @@
+<html lang="fr">
+    <head>
+    	<meta charset="utf-8">
+    	<title>Alexa Designer</title>
+    	
+    	<!-- Chart.js Library -->
+    	<script src="controller/Chart.js-master/Chart.js"></script>
+    	<!-- Bootstrap -->
+        <link href="controller/bootstrap/css/bootstrap.css" rel="stylesheet">
+        <!-- jquery -->
+        <script src="controller/bootstrap/js/jquery-2.1.0.min.js"></script>
+        <!-- Include all compiled plugins (below), or include individual files as needed -->
+        <script src="controller/bootstrap/js/bootstrap.js"></script>
+        <!-- Controller Henri -->
+        <script src="controller/dashboard-controller.js"></script>
+        <!-- CSS Henri -->
+        <link href="style/dashboard.css" rel="stylesheet">
+
+        <style type="text/css"> .navbar-brand,
+.navbar-nav li a {
+    line-height: 60px;
+    height: 60px;
+    padding-top: 0;
+}</style> 
+    </head>		
+	<body>
+        <div  class="container-fluid">
+           <nav class="navbar navbar-default navbar-fixed-top" style="box-shadow: -1px 2px 5px 1px rgba(0, 0, 0, 0.3);">
+              <div class="container-fluid">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                  </button>
+                  <a class="navbar-brand" href="#" style="padding-left: 30px;">Dasboard - Music Quiz v1.8</a>
+                </div>
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse navbar-right" id="bs-example-navbar-collapse-1">
+                  <ul class="nav navbar-nav">
+                    <li class="dropdown">
+                      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">My Apps <span class="caret"></span></a>
+                      <ul class="dropdown-menu">
+                        <li><a href="#">Add new App</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li><a href="#">Music Quiz v1.8</a></li>
+                        <li><a href="#">My Push Up Workout</a></li>
+                      </ul>
+                    </li>
+                  </ul>                 
+                </div><!-- /.navbar-collapse -->
+              </div><!-- /.container-fluid -->
+            </nav>
+      
+        	<div class="row" style="position:fixed; z-index: 1; background-color: #272D33;  padding-bottom: 100%; width:85px ; box-shadow: -1px 2px 5px 5px rgba(0, 0, 0, 0.3);">
+        	    <div  class="container-fluid">
+        	        <div >
+            		    <br>
+                        <br>
+                        <br>
+                        <br>
+            	        <br>
+            	        <a href="analytics_page_0.html" data-toggle="tooltip" data-placement="right" title="Over View">
+            	            <img  src="dashboard_1.svg" height="50" width="50">
+            	        </a>
+            	        <br>
+            	        <br>
+            	        <a href="analytics_page_1.html" data-toggle="tooltip" data-placement="right" title="Users">
+            	            <img src="active_users.svg" onmouseover="this.src='active_users_1.svg'" onmouseout="this.src='active_users.svg'" height="50" width="50"/>
+            	        </a>
+            	        <br>
+            	        <br>
+            	        <a href="analytics_page_2.html" data-toggle="tooltip" data-placement="right" title="Sessions">
+            	            <img  src="conversation.svg" onmouseover="this.src='conversation_1.svg'" onmouseout="this.src='conversation.svg'" height="50" width="50">
+            	        </a>
+            	        <br>
+            	        <br>
+            	        <a href="analytics_page_3.html" data-toggle="tooltip" data-placement="right" title="Intents">
+            	            <img  src="radar.svg" onmouseover="this.src='radar_1.svg'" onmouseout="this.src='radar.svg'" height="50" width="50">
+            	        </a>
+            	        <br>
+            	        <br>
+            	        <a href="analytics_page_4.html" data-toggle="tooltip" data-placement="right" title="User Log">
+            	            <img  src="log.svg" onmouseover="this.src='log_1.svg'" onmouseout="this.src='log.svg'" height="50" width="50">
+            	        </a>
+            	        <br>
+            	        <br>
+                        <br>
+                        <br>
+                        <a href="#" data-toggle="tooltip" data-placement="right" title="API Key">
+                            <img  src="key.svg" onmouseover="this.src='key_1.svg'" onmouseout="this.src='key.svg'" height="50" width="50">
+                        </a>
+                    </div>
+        	    </div>
+            </div>
+            <div class="row" style="padding-left: 85px;  padding-top: 50px; background-color: #F0F2F1;">
+                <div class="container-fluid " style="padding: 50px;" >
+        	        
+                    <!-- Cards-->
+        	        <div class="row" style="max-width:1050px; margin: 0 auto;">	
+            	        <div class="col-sm-3" >
+            	            <div class="panel panel-default" style="background-color: #3B4E67;">
+                                <div class="panel-body" style="min-height:91px">
+                                    <div class="media">
+                                      <div class="media-body">
+                                        <h3 name="Returning_user_number" class="media-heading" style="color:white;">0</h3>
+                                        <p style="color:white;">Returning Users</p>
+                                      </div>
+                                      <div class="media-right">
+                                        <img class="media-object" src="user.svg" height="50" width="50">
+                                      </div>
+                                    </div>
+                                </div>
+                            </div>
+            	        </div>
+            	        <div class="col-sm-3" >
+            	            <div class="panel panel-default" style="background-color: #289A9F;">
+                                <div class="panel-body" style="min-height:91px">
+                                    <div class="media">
+                                      <div class="media-body">
+                                        <div class="in-line">
+                                            <h3 class="media-heading" style="color:white;">+ </h3>
+                                            <h3 class="media-heading" name="new_user_number"style="color:white;">0</h3>
+                                        </div>
+                                        <p style="color:white;">New Users</p>
+                                      </div>
+                                      <div class="media-right">
+                                          <img class="media-object" src="new_user.svg" height="50" width="50">
+                                      </div>
+                                    </div>
+                                </div>
+                            </div>
+            	        </div>
+            	        <div class="col-sm-3" >
+            	            <div class="panel panel-default" style="background-color: #FFA841;">
+                                <div class="panel-body" style="min-height:91px">
+                                    <div class="media">
+                                      
+                                      <div class="media-body">
+                                        <h3 name="session_number" class="media-heading" style="color:white;">0</h3>
+                                        <p style="color:white;">Sessions</p>
+                                      </div>
+                                      <div class="media-right">
+                                          <img class="media-object" src="conversation.svg" height="50" width="50">
+                                      </div>
+                                    </div>
+                                </div>
+                            </div>
+            	        </div>
+            	        <div class="col-sm-3" >
+            	            <div class="panel panel-default" style="background-color: #C91F4E;">
+                                <div class="panel-body" style="min-height:91px">
+                                    <div class="media">
+                                      <div class="media-body">
+                                       <h3 class="media-heading" name="intent_number" style="color:white;">0</h4>
+                                        <p style="color:white;">Intent Triggered</p>
+                                      </div>
+                                      <div class="media-right">
+                                          <img class="media-object" src="radar.svg" height="50" width="50">
+                                      </div>
+                                    </div>
+                                </div>
+                            </div>
+            	        </div>
+        	        </div>
+        	        <!-- End Cards-->
+        	        
+        	        <!-- Users Pane-->
+            		<div class="row" >				
+                		<div class="panel panel-default" style="max-width:1020px; margin: 10px auto;">
+                            <div class="panel-body">
+                                <!-- Pane Title-->
+                			    <div class="in-line">
+            			            <h2>Users </h2>
+                					<h6 style="color:#E93122;" name="active_user_number_triangle" ><span class="glyphicon glyphicon-triangle-right" ></span></h6>
+                				    <h4 name="active_user_number" style="color:#E93122;">0</h4>
+                				    <h4> this week</h4>
+            				    </div>
+                			    <!-- Pane Content Left-->
+                				<div class="col-sm-8">
+                				    <br>
+                				    <div>
+                                        <canvas id="Users-Line-Chart" class="col-sm-12" style="height:200px"></canvas>
+                    		    	</div>
+                				</div>
+                				<!-- Pane Content Right-->
+                				<div class="col-sm-4">			
+                				<h4 align="center">Users repartition</h4>
+                				    <div>
+                                        <canvas id="User-Repartition-Pie" />
+                                    </div>
+                                    <div id="User-Repartition-Pie-Legend" class="chart-legend"></div>
+                                </div>
+                            </div>	
+            	        </div>
+                    </div>
+                    <!-- End Users Pane-->
+                    
+            	    <!-- Sessions Pane-->
+            		<div class="row">				
+                		<div class="panel panel-default" style="max-width:1020px; margin: 10px auto;">
+                            <div class="panel-body">
+                                <!-- Pane Title-->
+                                <div class="in-line">
+            			            <h2>Sessions </h2>
+                					<h6 style="color:#E93122;" name="session_number_triangle" ><span class="glyphicon glyphicon-triangle-right" ></span></h6>
+                				    <h4 name="session_number" style="color:#E93122;">0</h4>
+                				    <h4> this week</h4>
+            				    </div>
+                			    <!-- Pane Content Left-->
+                				<div class="col-sm-8">
+            				        <br>
+                				    <div>
+                				   		 <canvas class="col-sm-12" id="Sessions-Line-Chart" style="height:200px"></canvas>
+                		    		</div>
+                				</div>
+                				<!-- Pane Content Right-->
+                				<div class="col-sm-4">					
+                				    <br>
+            				        <br>
+            				        <br>
+                    	            <div class="panel panel-default col-sm-offset-1 col-sm-10 col-sm-offset-1" style="background-color: #FFA841; max-width:225px">
+                                        <div class="panel-body">
+                                            <div class="media">
+                                              <div class="media-body">
+                                                <div class="in-line">
+                                                    <h3 class="media-heading" name="session_evolution_sign" style="color:white;">+</h3>
+                                                    <h3 class="media-heading" name="session_evolution_number" style="color:white;">0</h3>
+                                                    <h3 class="media-heading" style="color:white;">%</h3>
+                                                </div>
+                                                <p style="color:white;">Sessions</p>
+                                              </div>
+                                              <div class="media-right">
+                                                  <img class="media-object" src="conversation.svg" height="50" width="50">
+                                              </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>	
+                            </div>	
+            	        </div>
+                    </div>
+                    <!-- End sessions Pane-->
+                    
+                    <!-- Intents Pane-->
+            		<div class="row">				
+                		<div class="panel panel-default" style="max-width:1020px; margin: 10px auto;">
+                            <div class="panel-body">
+                                <!-- Pane Title-->
+                			    <div class="in-line">
+            			            <h2>Intents </h2>
+                					<h6 style="color:#E93122;" name="intent_number_triangle"><span class="glyphicon glyphicon-triangle-right" ></span></h6>
+                				    <h4 name="intent_number" style="color:#E93122;">0</h4>
+                				    <h4> this week</h4>
+            				    </div>
+                			    <!-- Pane Content Left-->
+                				<div class="col-sm-6">
+                					<br>
+                				    <div id="Intent-Hits-Table"></div>
+                				    <a href="analytics_page_3.html">
+            	                    <button type="button" class="btn btn-intent">show more</button></a>
+                				</div>
+                				<!-- Pane Content Right-->
+                				<div class="col-sm-6">
+                				    <h4 align="center">Intents proportion</h4>	
+                				    <br>
+                				    <div>
+                                        <canvas id="Intent-Hits-Radar" />
+                                    </div>
+                                </div>	
+                            </div>	
+            	        </div>
+                    </div>
+                    <!-- End Intents Pane-->
+                    
+                </div>
+            </div>
+        </div>
+    </body>
+    
+	<script>
+	
+    
+        window.onload = function(){
+        
+               
+
+        var tableBody;
+
+        $.ajax({
+            url: 'bdd.php',
+            type: 'POST',
+            data : 'best_intent=test',
+            dataType: 'json',
+            success: function(json) {
+                var intents = json.intents;
+                var nbrs = json.nbrs;
+                var count = json.count;
+                var activations = json.activations;
+                var arr;
+                var intentR = new Array(), nbrR = new Array();
+
+                var tableName = "Intent-Hits-Table";  
+                var tableHead = new Array("Intent Name","Hits","Evolution");
+                var tableBody = new Array();
+                var fleche = "up";
+
+                for (var i = 0; i < (intents.length-1); i++) {
+                    if(intents[i] != "NEW_DIALOG_SESSION"){
+                        if(i<7){
+                                arr = [(intents[i].replace('"','')).replace('"',''),nbrs[i],activations[i]+"%"];
+                            tableBody.push(arr);
+                            intentR.push((intents[i].replace('"','')).replace('"',''));
+                            nbrR.push(nbrs[i]);
+                        }
+                    }
+                }
+            
+                setTable(tableName,tableHead,tableBody); 
+                setIntentRadar(intentR,nbrR);
+                if(json.count<json.count1){
+                    fleche = "down";
+                }else{
+                    fleche = "up";
+                }
+
+                setDataNumber("intent_number",parseInt(count));
+                setTriangelDirection("intent_number_triangle",fleche);
+                setUserLine(json.dates_users,json.nb_new_users,json.nb_returning_users);
+                setDataNumber("Returning_user_number",json.returning_users);
+                setDataNumber("new_user_number",json.new_users);
+                
+                //User Pane Left Pie
+                setUserRepartitionPie(json.new_users,json.returning_users); // (Number of New Users, Number of Returning Users)
+                var n_user = json.new_users+json.returning_users;
+                if(json.n_user<json.old_user){
+                    fleche = "down";
+                }else{
+                    fleche = "up";
+                }
+                setDataNumber("active_user_number",n_user);
+                setTriangelDirection("active_user_number_triangle",fleche);
+                
+            }
+        });
+    
+        //Nombre de sessions par jour/semaine, tendance
+        $.ajax({
+			url: 'dasboard_bdd.php',
+			type: 'POST',
+			data : 'analytics_page_2=test',	
+			dataType: 'json',	
+			success: function(json) {
+				
+				var nb_sessions = json.nb_sessions;					                				              
+                var sessions = json.sessions;
+                var dates = json.dates;                                                            
+				var tendance = json.tendance;					
+                
+                setDataNumber("session_number",nb_sessions);                  
+                setSessionLine(dates, sessions);                
+				setDataNumber("session_evolution_number",Math.abs(tendance));
+                
+                if(tendance >= 0){
+				    setDataSign("session_evolution_sign","+");
+                    setTriangelDirection("session_number_triangle","up");
+                }
+                else{
+                    setDataSign("session_evolution_sign","-");
+                    setTriangelDirection("session_number_triangle","down");
+                }               
+			}
+		});  
+        
+        }
+
+
+    /*
+        window.onload = function(){
+            
+            setDataNumber("Returning_user_number",1661);
+	        setDataNumber("new_user_number",67);
+	        
+	        setDataNumber("active_user_number",1737);
+            setTriangelDirection("active_user_number_triangle","down");
+	        
+	        setDataNumber("session_number",2876);
+            setTriangelDirection("session_number_triangle","up");
+	        setDataNumber("session_evolution_number",17);
+	        setDataSign("session_evolution_sign","-");
+	        
+	        setDataNumber("intent_number",13476);
+            setTriangelDirection("intent_number_triangle","down");
+	        
+	       //User Pane Right Line
+		    setUserLine(
+		        ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"], //Lables
+		        [250,200,250,134,124,50,64],    //Number of New Users
+		        [0,10,70,130,120,150,200]       //Number of Returning Users
+			);
+            
+           //User Pane Left Pie
+			setUserRepartitionPie(70,100); // (Number of New Users, Number of Returning Users)
+            
+        	
+        	//Line session
+        	setSessionLine(
+        	    ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"], //Lables
+        	    [320,223,312,334,224,323,426]   //Number of Sessions
+        	);
+        	
+        	//Intent Radar
+            setIntentRadar(
+                ["Yes", "Help", "Ready", "No", "Stop", "Repeat", "Preferencies"], //Lables
+        	    [320,223,312,334,224,323,426] 
+        	    );
+        	   
+            //Intent Table
+            var tableName = "Intent-Hits-Table";   
+        	var tableHead = new Array("Intent Name","Hits","Evolution");
+        	var tableBody = new Array(
+        	    new Array("HelpIntent","27","+11%"),
+        	    new Array("Stop","24","+17%"),
+        	    new Array("Yes","12","-24%"),
+        	    new Array("Ready","8","+67%"),
+        	    new Array("Repeat","3","-26%"),
+        	    new Array("No","2","+23%")
+        	);
+        	
+        	setTable(tableName,tableHead,tableBody);
+		}
+*/
+	</script>
+		<!-- end: JavaScript-->
+</html>
